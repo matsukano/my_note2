@@ -1,24 +1,52 @@
-# README
+## アプリケーション名	
+my note
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション概要	
+メモの作成。  
+登録済のメモのタイトルと同じ単語が本文中にある場合、該当する単語が自動で該当ページへのハイパーリンク化される。
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+## 利用方法	
+・トップページでタイトルと本文を記入し、保存ボタンを押すとメモが登録される。
 
-* Configuration
+・サイドバーに表示されているメモのタイトルをクリックするとメモの詳細ページへ移動する。
 
-* Database creation
+・編集、削除は詳細ページから行う。
 
-* Database initialization
+・マークダウン記法で入力
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## アプリケーションを作成した背景	
+自分自身がメモの整理が苦手なため、wikiのようにメモ同士を関連付けて簡単に整理できるようにしたかったため。
+本文の入力や編集の際に、なるべくマークダウンでリンクを入力する手間を省きたかったので登録済のタイトルと同じ単語が本文中にある場合は自動でリンクとなるようにした。
 
-* Deployment instructions
+## 洗い出した要件	
+[要件定義シート](https://docs.google.com/spreadsheets/d/1A4wel3upo-q7Et_sOtHgaoOnjhXK_01_jtdcFmcznqQ/edit#gid=1708663434)
 
-* ...
+
+## データベース設計	
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| title  | text       | null: false                    |
+| text   | text       | null: false, limit: 4294967295 |
+
+
+## 画面遷移図	
+[![Image from Gyazo](https://i.gyazo.com/3cc8a7a4d0c6cb56734a5c37168ef87c.png)](https://gyazo.com/3cc8a7a4d0c6cb56734a5c37168ef87c)
+
+## 開発環境	
+【言語】　Ruby
+
+【OS】　MacOS Monterey
+
+【DB】　mysql2 
+
+## ローカルでの動作方法
+以下のコマンドを順に実行  
+% git clone https://github.com/matsukano/my_note2.git  
+% cd my_note  
+% bundle install  
+% yarn install  
+
+
